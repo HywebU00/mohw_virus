@@ -498,8 +498,8 @@ $(function() {
     /*-----------------------------------*/
     ///////////////置頂go to top////////////
     /*-----------------------------------*/
-    $(window).bind('scroll', function() {
-        if ($(this).scrollTop() > 200) {
+    $(window).on('scroll', function() {
+        if ($(this).scrollTop() > 100) {
             $('.scrollToTop').fadeIn();
         } else {
             $('.scrollToTop').fadeOut();
