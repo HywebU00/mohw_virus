@@ -100,8 +100,6 @@ $(function() {
     });
     _search.addClass('m_search');
     // 切換PC/Mobile 選單
-    _nav.clone().prependTo(_mArea);
-            _menu.clone().prependTo(_mArea);
     function mobileMenu() {
         ww = _window.outerWidth();
         if (ww < wwSmall) {
@@ -111,8 +109,9 @@ $(function() {
             menu_status = false;
             _sidebar.hide();
             _overlay.hide();
-
-            // _search.prependTo(_body);
+            _nav.prependTo(_mArea);
+            _menu.prependTo(_mArea);
+            _search.prependTo(_body);
             _mArea.css({
                 'margin-left': _mArea.width() * -1 + 'px'
             });
@@ -158,10 +157,10 @@ $(function() {
             _window.on('resize');
             hideSidebar();
             _body.removeClass('noscroll');
-            // _nav.insertAfter('.header h1');
-            // _search.appendTo('.header .container');
-            // $('.searchCtrl').insertAfter('.header .navigation');
-            // _menu.appendTo('.header .container');
+            _nav.insertAfter('.header h1');
+            _search.appendTo('.header .container');
+            $('.searchCtrl').insertAfter('.header .navigation');
+            _menu.appendTo('.header .container');
             // _search.removeClass('m_search');
             _search.hide();
             search_mode = false;
@@ -219,7 +218,8 @@ $(function() {
         search_mode = false;
     });
     // 固定版頭
-    var stickyMenuTop = $('.header .menu').offset().top;
+    if($('.header').has('.menu') && ww>=wwSmall){
+       var stickyMenuTop = $('.header .menu').offset().top;
     $(window).bind("load scroll resize", function(e) {
         ww = _window.outerWidth();
         if (ww >= wwSmall && $(this).scrollTop() > stickyMenuTop) {
@@ -234,6 +234,8 @@ $(function() {
             $('.main').css('margin-top', 0);
         }
     });
+    }
+
     //電腦版search
     // $('.searchCtrl').click(function(){
     //               _search.slideToggle();
@@ -499,8 +501,8 @@ $(function() {
     /*-----------------------------------*/
     ///////////////置頂go to top////////////
     /*-----------------------------------*/
-    $(window).on('scroll', function() {
-        if ($(this).scrollTop() > 100) {
+    $(window).bind('scroll', function() {
+        if ($(this).scrollTop() > 200) {
             $('.scrollToTop').fadeIn();
         } else {
             $('.scrollToTop').fadeOut();
