@@ -109,8 +109,8 @@ $(function() {
             menu_status = false;
             _sidebar.hide();
             _overlay.hide();
-            _nav.prependTo(_mArea);
-            _menu.prependTo(_mArea);
+            _nav.clone().prependTo(_mArea);
+            _menu.clone().prependTo(_mArea);
             // _search.prependTo(_body);
             _mArea.css({
                 'margin-left': _mArea.width() * -1 + 'px'
@@ -157,10 +157,10 @@ $(function() {
             _window.on('resize');
             hideSidebar();
             _body.removeClass('noscroll');
-            _nav.insertAfter('.header h1');
+            // _nav.insertAfter('.header h1');
             // _search.appendTo('.header .container');
             // $('.searchCtrl').insertAfter('.header .navigation');
-            _menu.appendTo('.header .container');
+            // _menu.appendTo('.header .container');
             // _search.removeClass('m_search');
             _search.hide();
             search_mode = false;
