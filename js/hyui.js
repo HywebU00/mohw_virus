@@ -100,6 +100,8 @@ $(function() {
     });
     _search.addClass('m_search');
     // 切換PC/Mobile 選單
+    _nav.clone().prependTo(_mArea);
+            _menu.clone().prependTo(_mArea);
     function mobileMenu() {
         ww = _window.outerWidth();
         if (ww < wwSmall) {
@@ -109,8 +111,7 @@ $(function() {
             menu_status = false;
             _sidebar.hide();
             _overlay.hide();
-            _nav.clone().prependTo(_mArea);
-            _menu.clone().prependTo(_mArea);
+
             // _search.prependTo(_body);
             _mArea.css({
                 'margin-left': _mArea.width() * -1 + 'px'

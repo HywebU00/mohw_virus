@@ -1,6 +1,6 @@
 // 自行加入的JS請寫在這裡
 $(function() {
-    // lazyload  
+    // lazyload
     //可以指定你想要的元素做lazyload
     $("img").lazyload({ effect: "fadeIn" });
     //燈箱slick+lightBox組合
@@ -70,7 +70,7 @@ $(function() {
         focusOnSelect: true,
         infinite: true,
     });
-    // 
+    //
     //請放置customize.js
     $('.mpSlider').slick({
         dots: true,
@@ -79,7 +79,15 @@ $(function() {
         speed: 500,
         autoplay: true,
         fade: true,
-        cssEase: 'ease'
+        cssEase: 'ease',
+          responsive: [{
+                breakpoint: 767,
+                settings: {
+                    arrows: false
+
+                }
+            }
+        ]
     });
     // 社會安全資訊網
     $('.infoSlider').slick({
@@ -94,7 +102,7 @@ $(function() {
                     slidesToShow: 4,
                     slidesToScroll:1,
                     infinite: true,
-                   
+
                 }
             }, {
                 breakpoint: 991,
@@ -134,7 +142,7 @@ $(function() {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    
+
                 }
             }, {
                 breakpoint: 991,
