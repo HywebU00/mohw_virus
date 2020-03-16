@@ -172,6 +172,7 @@ $(function() {
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay:true,
+        cssEase: 'ease',
         responsive: [{
                 breakpoint: 1199,
                 settings: {
