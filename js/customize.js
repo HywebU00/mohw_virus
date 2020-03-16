@@ -171,17 +171,18 @@ $(function() {
         speed: 300,
         slidesToShow: 4,
         slidesToScroll: 1,
+        autoplay:true,
         responsive: [{
                 breakpoint: 1199,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                     slidesToScroll: 1,
 
                 }
             }, {
                 breakpoint: 991,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 2,
                     slidesToScroll: 1
                 }
             }, {
