@@ -169,7 +169,7 @@ $(function() {
         infinite: false,
         arrows: true,
         speed: 300,
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         autoplay:true,
         cssEase: 'ease',
