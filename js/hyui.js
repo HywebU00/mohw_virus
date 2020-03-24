@@ -99,6 +99,12 @@ $(function() {
         _menu.find('li ul').hide();
     });
     _search.addClass('m_search');
+    _nav.clone().prependTo(_mArea);
+    _menu.clone().prependTo(_mArea);
+    _search.clone().prependTo(_body);
+    if($('header .google_translate').length>0){
+        $('header .google_translate').clone().prependTo('.main');
+    }
     // 切換PC/Mobile 選單
     function mobileMenu() {
         ww = _window.outerWidth();
@@ -109,9 +115,6 @@ $(function() {
             menu_status = false;
             _sidebar.hide();
             _overlay.hide();
-            _nav.prependTo(_mArea);
-            _menu.prependTo(_mArea);
-            _search.prependTo(_body);
             _mArea.css({
                 'margin-left': _mArea.width() * -1 + 'px'
             });
@@ -157,10 +160,11 @@ $(function() {
             _window.on('resize');
             hideSidebar();
             _body.removeClass('noscroll');
-            _nav.insertAfter('.header h1');
-            _search.appendTo('.header .container');
+            // _nav.insertAfter('.header h1');
+            // _search.appendTo('.header .container');
+            // _menu.appendTo('.header .container');
+
             $('.searchCtrl').insertAfter('.header .navigation');
-            _menu.appendTo('.header .container');
             // _search.removeClass('m_search');
             _search.hide();
             search_mode = false;
@@ -218,24 +222,23 @@ $(function() {
         search_mode = false;
     });
     // 固定版頭
-    if($('.header').has('.menu') && ww>=wwSmall){
-       var stickyMenuTop = $('.header .menu').offset().top;
-    $(window).bind("load scroll resize", function(e) {
-        ww = _window.outerWidth();
-        if (ww >= wwSmall && $(this).scrollTop() > stickyMenuTop) {
-            hh = Math.floor($('.header').outerHeight(true));
-            menuH = Math.floor(_menu.outerHeight(true));
-            $('.header').addClass('fixed');
-            $('.header').css('margin-top', menuH - hh);
-            $('.main').css('margin-top', hh);
-        } else {
-            $('.header').removeClass('fixed');
-            $('.header').css('margin-top', 0);
-            $('.main').css('margin-top', 0);
-        }
-    });
+    if ($('.header').has('.menu') && ww >= wwSmall) {
+        var stickyMenuTop = $('.header .menu').offset().top;
+        $(window).bind("load scroll resize", function(e) {
+            ww = _window.outerWidth();
+            if (ww >= wwSmall && $(this).scrollTop() > stickyMenuTop) {
+                hh = Math.floor($('.header').outerHeight(true));
+                menuH = Math.floor(_menu.outerHeight(true));
+                $('.header').addClass('fixed');
+                $('.header').css('margin-top', menuH - hh);
+                $('.main').css('margin-top', hh);
+            } else {
+                $('.header').removeClass('fixed');
+                $('.header').css('margin-top', 0);
+                $('.main').css('margin-top', 0);
+            }
+        });
     }
-
     //電腦版search
     // $('.searchCtrl').click(function(){
     //               _search.slideToggle();
