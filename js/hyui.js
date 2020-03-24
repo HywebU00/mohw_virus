@@ -101,7 +101,6 @@ $(function() {
     _search.addClass('m_search');
     _nav.clone().prependTo(_mArea);
     _menu.clone().prependTo(_mArea);
-    _search.clone().prependTo(_body);
     if($('header .google_translate').length>0){
         $('header .google_translate').clone().prependTo('.main');
     }
