@@ -101,9 +101,10 @@ $(function() {
     _search.addClass('m_search');
     _nav.clone().prependTo(_mArea);
     _menu.clone().prependTo(_mArea);
-    if($('header .google_translate').length>0){
-        $('header .google_translate').clone().prependTo('.main');
-    }
+	$(".sidebar .navigation .google_translate").detach();
+    //if($('header .google_translate').length>0){
+    //    $('header .google_translate').clone().prependTo('.main');
+    //}
     // 切換PC/Mobile 選單
     function mobileMenu() {
         ww = _window.outerWidth();
