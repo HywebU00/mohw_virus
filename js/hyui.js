@@ -101,7 +101,10 @@ $(function() {
     _search.addClass('m_search');
     _nav.clone().prependTo(_mArea);
     _menu.clone().prependTo(_mArea);
-	$(".sidebar .navigation .google_translate").detach();
+		
+	if ( $(".sidebar .navigation .google_translate").length > 0 ) {
+		$(".sidebar .navigation .google_translate").attr("id", "google_translate_element_mobile");
+	}		
     //if($('header .google_translate').length>0){
     //    $('header .google_translate').clone().prependTo('.main');
     //}
