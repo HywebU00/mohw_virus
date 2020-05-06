@@ -89,6 +89,22 @@ $(function() {
             }
         ]
     });
+    $('.articleSlider').slick({
+        dots: true,
+        arrows: true,
+        infinite: true,
+        speed: 500,
+        autoplay: true,
+        cssEase: 'ease',
+          responsive: [{
+                breakpoint: 767,
+                settings: {
+                    arrows: false
+
+                }
+            }
+        ]
+    });
     // 社會安全資訊網
     $('.infoSlider').slick({
         dots: false,
