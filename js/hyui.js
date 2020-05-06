@@ -101,9 +101,13 @@ $(function() {
     _search.addClass('m_search');
     _nav.clone().prependTo(_mArea);
     _menu.clone().prependTo(_mArea);
-    if($('header .google_translate').length>0){
-        $('header .google_translate').clone().prependTo('.main');
+
+    if ( $(".sidebar .navigation .google_translate").length > 0 ) {
+        $(".sidebar .navigation .google_translate").attr("id", "google_translate_element_mobile");
     }
+    //if($('header .google_translate').length>0){
+    //    $('header .google_translate').clone().prependTo('.main');
+    //}
     // 切換PC/Mobile 選單
     function mobileMenu() {
         ww = _window.outerWidth();
@@ -517,7 +521,8 @@ $(function() {
         $('html, body').animate({ scrollTop: 0 }, 800, 'easeOutExpo');
         e.preventDefault();
     });
-    $('.scrollToTop').keydown(function(e) {
+    $('.scrollToTop').keydown(function (e) {
+        $('html, body').animate({ scrollTop: 0 }, 800, 'easeOutExpo');
         _body.find('a:first').focus();
         e.preventDefault();
     });
@@ -578,7 +583,7 @@ $(function() {
     //////////分享按鈕 share dropdwon////////
     /*------------------------------------*/
     $('.function_panel .share').children('ul').hide();
-    $('.function_panel .share').prepend('<a href="#" class="shareButton">share分享按鈕</a>');
+    $('.function_panel .share').prepend('<a href="#" class="shareButton">share</a>');
     var _shareButton = $('.shareButton');
     _shareButton.off().click(function(e) {
         $(this).siblings('ul').stop(true, true).slideToggle();
@@ -623,6 +628,7 @@ $(function() {
     /////////// category active  //////////
     /*-----------------------------------*/
     $('.category').find('a').off().click(function(event) {
+        // $(this).parent('li').siblings().find('a').removeClass('active');
         $(this).toggleClass('active');
     });
     /*-----------------------------------*/
@@ -632,6 +638,10 @@ $(function() {
         // alt+S 查詢
         if (e.altKey && e.keyCode == 83) {
             $('html, body').animate({ scrollTop: 0 }, 200, 'easeOutExpo');
+            // 檢查如果隱藏狀態，先顯示搜尋列
+            if ($('.search').is(':hidden')) {
+                $('.search').show();
+            }
             $('.search').find('input[type="text"]').focus();
         }
         // alt+U header
