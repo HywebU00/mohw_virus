@@ -1,5 +1,23 @@
 // 自行加入的JS請寫在這裡
 $(function() {
+    //
+    // var item_lenth = $('.jumi_timeline .item').length;
+    // $(window).on("load resize scroll", function(e) {
+    //     var window_H = $(window).innerHeight();
+    //     var windowTop = $(window).scrollTop();
+    //     // 可以+130 讓圖進入多點再跑動畫
+    //     var imgTop = Math.floor($('.jumi_timeline .item').offset().top - windowTop + 130);
+
+    //     if (imgTop < window_H && imgTop > 0) {
+    //         var i;
+    //         for (i = 0; i < item_lenth; i++) {
+    //             $('.jumi_timeline .item').eq(i).addClass('wow').addClass('fadeIn');
+    //             $('.jumi_timeline .item').eq(i).attr('data-wow-duration', '1s');
+    //             $('.jumi_timeline .item').eq(i).attr('data-wow-delay', i / 5 + 's');
+    //         }
+    //     }
+    // });
+    // 主秘的時間軸
     $('.jumi_timeline').find('.item').hover(function() {
         $('.jumi_timeline').removeClass('active');
         $(this).addClass('active');
@@ -12,15 +30,12 @@ $(function() {
     var leftPaddle = document.getElementsByClassName('left-paddle');
     var rightPaddle = document.getElementsByClassName('right-paddle');
     var itemsLength = $('.jumi_timeline .item').length;
-
     var itemSize = $('.item').outerWidth(true);
-
     var paddleMargin = 0;
     var getMenuWrapperSize = function() {
         return $('.jumi_timeline').outerWidth();
     }
     var menuWrapperSize = getMenuWrapperSize();
-
     $(window).on('resize', function() {
         menuWrapperSize = getMenuWrapperSize();
     });
@@ -28,7 +43,6 @@ $(function() {
     var getMenuSize = function() {
         return itemsLength * itemSize;
     };
-    console.log(itemsLength * itemSize);
     var menuSize = getMenuSize();
     // get how much of menu is invisible
     var menuInvisibleSize = menuSize - menuWrapperSize;
@@ -54,7 +68,7 @@ $(function() {
     });
     // scroll to left
     $(rightPaddle).on('click', function() {
-        $('.jumi_timeline').animate({ scrollLeft:"+=600" }, scrollDuration, 'easeOutQuad');
+        $('.jumi_timeline').animate({ scrollLeft: "+=600" }, scrollDuration, 'easeOutQuad');
     });
     // scroll to right
     $(leftPaddle).on('click', function() {
