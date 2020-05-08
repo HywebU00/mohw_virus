@@ -68,11 +68,11 @@ $(function() {
     });
     // scroll to left
     $(rightPaddle).on('click', function() {
-        $('.jumi_timeline').animate({ scrollLeft: "+=500" }, scrollDuration, 'easeOutQuad');
+        $('.jumi_timeline').animate({ scrollLeft: "+=300" }, scrollDuration, 'easeOutQuad');
     });
     // scroll to right
     $(leftPaddle).on('click', function() {
-        $('.jumi_timeline').animate({ scrollLeft: "-=500" }, scrollDuration, 'easeOutQuad');
+        $('.jumi_timeline').animate({ scrollLeft: "-=300" }, scrollDuration, 'easeOutQuad');
     });
     //
     // lazyload
