@@ -26,7 +26,7 @@ $(function() {
     });
     //
     // duration of scroll animation
-    var scrollDuration = 500;
+    var scrollDuration = 800;
     var leftPaddle = document.getElementsByClassName('left-paddle');
     var rightPaddle = document.getElementsByClassName('right-paddle');
     var itemsLength = $('.jumi_timeline .item').length;
@@ -68,11 +68,11 @@ $(function() {
     });
     // scroll to left
     $(rightPaddle).on('click', function() {
-        $('.jumi_timeline').animate({ scrollLeft: "+=600" }, scrollDuration, 'easeOutQuad');
+        $('.jumi_timeline').animate({ scrollLeft: "+=500" }, scrollDuration, 'easeOutQuad');
     });
     // scroll to right
     $(leftPaddle).on('click', function() {
-        $('.jumi_timeline').animate({ scrollLeft: "-=600" }, scrollDuration, 'easeOutQuad');
+        $('.jumi_timeline').animate({ scrollLeft: "-=500" }, scrollDuration, 'easeOutQuad');
     });
     //
     // lazyload
