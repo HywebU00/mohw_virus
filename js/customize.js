@@ -1,22 +1,25 @@
 // 自行加入的JS請寫在這裡
 $(function() {
     //
-    // var item_lenth = $('.jumi_timeline .item').length;
-    // $(window).on("load resize scroll", function(e) {
-    //     var window_H = $(window).innerHeight();
-    //     var windowTop = $(window).scrollTop();
-    //     // 可以+130 讓圖進入多點再跑動畫
-    //     var imgTop = Math.floor($('.jumi_timeline .item').offset().top - windowTop + 130);
-
-    //     if (imgTop < window_H && imgTop > 0) {
-    //         var i;
-    //         for (i = 0; i < item_lenth; i++) {
-    //             $('.jumi_timeline .item').eq(i).addClass('wow').addClass('fadeIn');
-    //             $('.jumi_timeline .item').eq(i).attr('data-wow-duration', '1s');
-    //             $('.jumi_timeline .item').eq(i).attr('data-wow-delay', i / 5 + 's');
-    //         }
-    //     }
-    // });
+    var item_lenth = $('.jumi_timeline .item').length;
+    $(window).on("load resize scroll", function(e) {
+        var window_H = $(window).innerHeight();
+        var windowTop = $(window).scrollTop();
+        // 可以+130 讓圖進入多點再跑動畫
+        var imgTop = Math.floor($('.jumi_timeline .item').offset().top - windowTop + 220);
+        // $('.jumi_timeline .item').each(function(i) {
+        //      $(this).eq(i).delay(i*1000).addClass('effect');
+        //      console.log(i);
+        // });
+        // var i;
+        // for (i = 0; i < item_lenth; i++) {
+        //     $('.jumi_timeline .item').eq(i).delay(i*100).addClass('effect');
+        //     console.log(i);
+        // }
+        if (imgTop < window_H && imgTop > 0) {
+            $('.jumi_timeline').addClass('effect');
+        }
+    });
     // 主秘的時間軸
     $('.jumi_timeline').find('.item').hover(function() {
         $('.jumi_timeline').removeClass('active');
