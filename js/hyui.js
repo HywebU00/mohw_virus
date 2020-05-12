@@ -111,7 +111,7 @@ $(function() {
     // 切換PC/Mobile 選單
     function mobileMenu() {
         ww = _window.outerWidth();
-        if (ww < wwSmall) {
+        if (ww < wwMedium) {
             /*-----------------------------------*/
             /////////////// 手機版設定 /////////////
             /*-----------------------------------*/

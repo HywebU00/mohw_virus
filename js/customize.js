@@ -6,7 +6,12 @@ $(function() {
         var window_H = $(window).innerHeight();
         var windowTop = $(window).scrollTop();
         // 可以+130 讓圖進入多點再跑動畫
-        var imgTop = Math.floor($('.jumi_timeline .item').offset().top - windowTop + 220);
+        if (($('.jumi_timeline').length > 0)) {
+            var imgTop = Math.floor($('.jumi_timeline .item').offset().top - windowTop + 220);
+            if (imgTop < window_H && imgTop > 0) {
+                $('.jumi_timeline').addClass('effect');
+            }
+        }
         // $('.jumi_timeline .item').each(function(i) {
         //      $(this).eq(i).delay(i*1000).addClass('effect');
         //      console.log(i);
@@ -16,9 +21,6 @@ $(function() {
         //     $('.jumi_timeline .item').eq(i).delay(i*100).addClass('effect');
         //     console.log(i);
         // }
-        if (imgTop < window_H && imgTop > 0) {
-            $('.jumi_timeline').addClass('effect');
-        }
     });
     // 主秘的時間軸
     $('.jumi_timeline').find('.item').hover(function() {
