@@ -233,7 +233,7 @@ $(function() {
                 hh = Math.floor($('.header').outerHeight(true));
                 menuH = Math.floor(_menu.outerHeight(true));
                 $('.header').addClass('fixed');
-                $('.header').css('margin-top', menuH - hh);
+                $('.header').css('margin-top', -60);
                 $('.main').css('margin-top', hh);
             } else {
                 $('.header').removeClass('fixed');
@@ -630,6 +630,7 @@ $(function() {
     $('.category').find('a').off().click(function(event) {
         // $(this).parent('li').siblings().find('a').removeClass('active');
         $(this).toggleClass('active');
+        $(this).blur();
     });
     /*-----------------------------------*/
     /////////// 無障礙快捷鍵盤組合  //////////
