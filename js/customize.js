@@ -153,7 +153,7 @@ $(function() {
     //
     //請放置customize.js
     $('.mpSlider').slick({
-        dots: true,
+        dots: false,
         arrows: true,
         infinite: true,
         speed: 500,
